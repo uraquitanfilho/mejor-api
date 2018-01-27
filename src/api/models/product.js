@@ -8,10 +8,10 @@ const supplierSchema = new mongoose.Schema({
 });
 
 const productSchema = new mongoose.Schema({
-  name: {type: String, required: true},
-  description: {type: String, required: true},
-  price: {type: Number, required: true},
-  coin: {type: String, required: true},
+  name: {type: String, unique: true, required: [true, 'please type product name.']},
+  description: {type: String, required: [true, 'please type product description.']},
+  price: {type: Number, required: [true, 'please type product price.']},
+  coin: {type: String, required: [true, 'please type money coin.']},
   supplier: supplierSchema
 });
 

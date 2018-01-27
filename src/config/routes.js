@@ -11,6 +11,6 @@ module.exports = (server) => {
 
   //Product routes
   const Product = require('../api/productService');
-  User.register(router,'/product');
+  Product.register(router,'/product');
 
 }
