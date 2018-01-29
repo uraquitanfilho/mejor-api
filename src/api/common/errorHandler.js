@@ -6,6 +6,10 @@ module.exports = (req, res, next) => {
   if(bundle.errors) {
     const errors = parseErrors(bundle.errors);
     res.status(500).json({errors});
+  } else if(bundle.errmsg) {
+    const errors = [];
+    errors.push(bundle.errmsg);
+    res.status(500).json({errors});
   } else {
     //call next midleware
     next();
